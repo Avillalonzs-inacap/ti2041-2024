@@ -1,0 +1,27 @@
+{% extends 'productos/base.html' %}
+
+{% block title %}Consulta de Productos{% endblock %}
+
+{% block content %}
+<h2>Lista de Productos Registrados</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Marca</th>
+            <th>Fecha de Vencimiento</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for producto in productos %}
+        <tr>
+            <td>{{ producto.codigo }}</td>
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.marca }}</td>
+            <td>{{ producto.fecha_vencimiento }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

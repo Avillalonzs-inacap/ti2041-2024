@@ -1,0 +1,27 @@
+{% extends 'productos/base.html' %}
+
+{% block title %}Registrar Producto{% endblock %}
+
+{% block content %}
+<h2>Registrar Producto</h2>
+<form method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="codigo" class="form-label">Código:</label>
+        <input type="text" class="form-control" name="codigo" required>
+    </div>
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre:</label>
+        <input type="text" class="form-control" name="nombre" required>
+    </div>
+    <div class="mb-3">
+        <label for="marca" class="form-label">Marca:</label>
+        <input type="text" class="form-control" name="marca" required>
+    </div>
+    <div class="mb-3">
+        <label for="fecha_vencimiento" class="form-label">Fecha de Vencimiento:</label>
+        <input type="date" class="form-control" name="fecha_vencimiento" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Registrar</button>
+</form>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'productos/base.html' %}
+
+{% block title %}Resultado{% endblock %}
+
+{% block content %}
+<h2>Producto registrado con éxito.</h2>
+<a href="{% url 'registro_producto' %}" class="btn btn-secondary">Registrar otro producto</a>
+<a href="{% url 'consulta_productos' %}" class="btn btn-info">Ver productos</a>
+{% endblock %}
