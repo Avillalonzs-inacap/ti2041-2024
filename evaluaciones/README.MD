@@ -11,5 +11,5 @@ Esta es una aplicación web sencilla desarrollada en Django que permite a los ad
 
 1. **Clona el repositorio**:
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
+   git clone https://github.com/Avillalonzs-inacap/ti2041-2024.git
    cd gestion_productos
