@@ -9,6 +9,13 @@
 </head>
 <body>
     <h1>Registro de Producto</h1>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p style="color: green;">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+
     <form method="POST">
         {% csrf_token %}
         <label for="codigo">Código:</label>
@@ -17,11 +24,24 @@
         <label for="nombre">Nombre:</label>
         <input type="text" name="nombre" required><br>
         
-        <label for="marca">Marca:</label>
-        <input type="text" name="marca" required><br>
-        
+        <label for="marca">Marcamelo:</label>
+        <select name="marca" required>
+            <option value="">Seleccione una marca</option>
+            {% for marca in marcas %}
+                <option value="{{ marca.id }}">{{ marca.nombre }}</option>
+            {% endfor %}
+        </select><br>
+
         <label for="fecha_vencimiento">Fecha de Vencimiento:</label>
         <input type="date" name="fecha_vencimiento" required><br>
+
+        <label for="categoria">Categoría:</label>
+        <select name="categoria" required>
+            <option value="">Seleccione una categoría</option>
+            {% for categoria in categorias %}
+                <option value="{{ categoria.id }}">{{ categoria.nombre }}</option>
+            {% endfor %}
+        </select><br>
 
         {% if error %}
             <p style="color: red;">{{ error }}</p>
@@ -30,4 +50,5 @@
         <button type="submit">Registrar</button>
     </form>
 </body>
+
 </html>
