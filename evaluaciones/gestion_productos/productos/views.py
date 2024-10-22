@@ -13,14 +13,11 @@ def registro_producto(request):
         peso = request.POST['peso']
         categoria_id = request.POST['categoria']
 
-        # Obtener la marca y categoría desde la base de datos
         marca = Marca.objects.get(id=marca_id)
         categoria = Categoria.objects.get(id=categoria_id)
 
-        # Crear las características del producto
         caracteristicas = Caracteristica.objects.create(ancho=ancho, alto=alto, peso=peso)
 
-        # Crear y guardar el nuevo producto
         nuevo_producto = Producto.objects.create(
             codigo=codigo,
             nombre=nombre,
@@ -32,13 +29,12 @@ def registro_producto(request):
 
         return redirect('resultado_producto')
 
-    # Obtener marcas y categorías desde la base de datos
     marcas = Marca.objects.all()
     categorias = Categoria.objects.all()
     return render(request, 'productos/registro.html', {'marcas': marcas, 'categorias': categorias})
 
 def consulta_productos(request):
-    productos = Producto.objects.all()  # Obtener todos los productos desde la base de datos
+    productos = Producto.objects.all()
     return render(request, 'productos/consulta.html', {'productos': productos})
 
 def resultado_producto(request):
