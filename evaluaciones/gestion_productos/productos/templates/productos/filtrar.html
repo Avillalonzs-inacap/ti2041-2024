@@ -3,25 +3,32 @@
 {% block title %}Filtrar Productos{% endblock %}
 
 {% block content %}
-<h1>Filtrar Productos</h1>
-<a href="{% url 'index' %}" class="btn btn-info">volver</a>
+<div class="header">
+    <h1>Filtrar Productos</h1>
+</div>
 
-<form method="get" action="">
-    <label for="marca">Marca:</label>
-    <select name="marca" class="form-control">
-        <option value="">-- Todas las marcas --</option>
-        {% for marca in marcas %}
-            <option value="{{ marca.id }}">{{ marca.nombre }}</option>
-        {% endfor %}
-    </select>
+<a href="{% url 'index' %}" class="btn btn-info mb-3">Volver</a>
 
-    <label for="categoria">Categoría:</label>
-    <select name="categoria" class="form-control">
-        <option value="">-- Todas las categorías --</option>
-        {% for categoria in categorias %}
-            <option value="{{ categoria.id }}">{{ categoria.nombre }}</option>
-        {% endfor %}
-    </select>
+<form method="get" action="" class="shadow p-4 rounded">
+    <div class="form-group mb-3">
+        <label for="marca">Marca:</label>
+        <select name="marca" class="form-control">
+            <option value="">-- Todas las marcas --</option>
+            {% for marca in marcas %}
+                <option value="{{ marca.id }}">{{ marca.nombre }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="categoria">Categoría:</label>
+        <select name="categoria" class="form-control">
+            <option value="">-- Todas las categorías --</option>
+            {% for categoria in categorias %}
+                <option value="{{ categoria.id }}">{{ categoria.nombre }}</option>
+            {% endfor %}
+        </select>
+    </div>
 
     <button type="submit" class="btn btn-primary">Filtrar</button>
 </form>
@@ -36,5 +43,4 @@
 {% else %}
     <p>No hay productos que coincidan con los criterios.</p>
 {% endif %}
-
 {% endblock %}

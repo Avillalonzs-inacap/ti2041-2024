@@ -3,8 +3,11 @@
 {% block title %}Consulta de Productos{% endblock %}
 
 {% block content %}
-<h2>Lista de Productos</h2>
-<a href="{% url 'index' %}" class="btn btn-info">volver</a>
+<div class="header">
+    <h1>Consulta de Productos</h1>
+</div>
+
+<a href="{% url 'index' %}" class="btn btn-info mb-3">Volver</a>
 
 <table class="table">
     <thead>
