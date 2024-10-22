@@ -1,0 +1,20 @@
+{% extends 'productos/base.html' %}
+
+{% block title %}Categorías de Productos{% endblock %}
+
+{% block content %}
+
+<h2>Registro de Categoría</h2>
+<a href="{% url 'index' %}" class="btn btn-info">volver</a>
+
+<form method="POST">
+    {% csrf_token %}    
+    <div class="form-group">
+        <label for="nombre">Categoria:</label>
+        <input type="text" id="nombre" name="nombre" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Registrar Categoria</button>
+    </div>
+</form>
+{% endblock %}

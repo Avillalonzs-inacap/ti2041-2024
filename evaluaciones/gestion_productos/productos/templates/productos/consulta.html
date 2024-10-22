@@ -3,14 +3,19 @@
 {% block title %}Consulta de Productos{% endblock %}
 
 {% block content %}
-<h2>Lista de Productos Registrados</h2>
-<table class="table table-bordered">
+<h2>Lista de Productos</h2>
+<a href="{% url 'index' %}" class="btn btn-info">volver</a>
+
+<table class="table">
     <thead>
         <tr>
             <th>Código</th>
             <th>Nombre</th>
             <th>Marca</th>
             <th>Fecha de Vencimiento</th>
+            <th>Precio</th>
+            <th>Categoría</th>
+            <th>Características</th>
         </tr>
     </thead>
     <tbody>
@@ -20,6 +25,13 @@
             <td>{{ producto.nombre }}</td>
             <td>{{ producto.marca }}</td>
             <td>{{ producto.fecha_vencimiento }}</td>
+            <td>{{ producto.precio }}</td>
+            <td>{{ producto.categoria }}</td>
+            <td>
+                Ancho: {{ producto.caracteristicas.ancho }} cm, 
+                Alto: {{ producto.caracteristicas.alto }} cm, 
+                Peso: {{ producto.caracteristicas.peso }} kg
+            </td>
         </tr>
         {% endfor %}
     </tbody>

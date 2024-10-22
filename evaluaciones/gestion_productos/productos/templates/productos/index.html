@@ -1,0 +1,12 @@
+{% extends 'productos/base.html' %}
+
+{% block title %}Gestión de Productos{% endblock %}
+
+{% block content %}
+    <h1>Gestión de Productos</h1>
+    <a href="{% url 'registro_producto' %}" class="btn mt-3">Crear Productos</a>
+    <a href="{% url 'consulta_productos' %}" class="btn mt-3">Ver Productos</a>
+    <a href="{% url 'crear_categoria' %}" class="btn mt-3">Crear Categoria</a>
+    <a href="{% url 'filtrar_productos' %}" class="btn mt-3">Filtrar Productos</a>
+
+{% endblock %}
