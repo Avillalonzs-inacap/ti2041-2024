@@ -4,9 +4,9 @@
 
 {% block content %}
 <h2>Producto registrado con éxito.</h2>
-<a href="{% url 'index' %}" class="btn btn-info">volver</a>
+<a href="{% url 'producos:index' %}" class="btn btn-info">volver</a>
 
 
-<a href="{% url 'registro_producto' %}" class="btn btn-secondary">Registrar otro producto</a>
-<a href="{% url 'consulta_productos' %}" class="btn btn-info">Ver productos</a>
+<a href="{% url 'producos:registro_producto' %}" class="btn btn-secondary">Registrar otro producto</a>
+<a href="{% url 'producos:consulta_productos' %}" class="btn btn-info">Ver productos</a>
 {% endblock %}

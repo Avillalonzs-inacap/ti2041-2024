@@ -1,11 +1,16 @@
 from django.urls import path
 from . import views
 
+app_name = 'productos'
+
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('registro/', views.registro_producto, name='registro_producto'),
-    path('consulta/', views.consulta_productos, name='consulta_productos'),
-    path('resultado/', views.resultado_producto, name='resultado_producto'),
+    path('login/', views.login_view, name='login'),
+    path('index/', views.index, name='index'),
+    path('registro/', views.registro_producto, name='registro'),
+    path('logout/', views.logout_view, name='logout'),
+    path('consulta_productos/', views.consulta_productos, name='consulta_productos'),
     path('crear_categoria/', views.crear_categoria, name='crear_categoria'),
     path('filtrar_productos/', views.filtrar_productos, name='filtrar_productos'),
-    ]
+
+
+]

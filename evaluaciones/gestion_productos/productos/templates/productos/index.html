@@ -6,6 +6,12 @@
 <div class="header text-center mb-4">
     <h1>Gestión de Productos</h1>
     <p>Gestione sus productos y categorías de manera eficiente.</p>
+
+    <li class="nav-item">
+        <a class="nav-link d-flex align-items-center" href="{% url 'productos:logout' %}">
+            <i class="bi bi-box-arrow-right me-2">Cerrar Sesión</i>
+        </a>
+    </li>
 </div>
 
 <div class="row text-center">
@@ -15,7 +21,7 @@
                 <div class="card-icon mb-3">✔</div>
                 <h3 class="card-title">Crear Productos</h3>
                 <p class="card-text">Agregue nuevos productos a su inventario.</p>
-                <a href="{% url 'registro_producto' %}" class="btn btn-primary">Crear Producto</a>
+                <a href="{% url 'productos:registro' %}" class="btn btn-primary">Crear Producto</a>
             </div>
         </div>
     </div>
@@ -26,7 +32,7 @@
                 <div class="card-icon mb-3">✔</div>
                 <h3 class="card-title">Ver Productos</h3>
                 <p class="card-text">Revise todos los productos disponibles.</p>
-                <a href="{% url 'consulta_productos' %}" class="btn btn-primary">Ver Productos</a>
+                <a href="{% url 'productos:consulta_productos' %}" class="btn btn-primary">Ver Productos</a>
             </div>
         </div>
     </div>
@@ -37,7 +43,7 @@
                 <div class="card-icon mb-3">✔</div>
                 <h3 class="card-title">Crear Categoría</h3>
                 <p class="card-text">Organice sus productos en categorías.</p>
-                <a href="{% url 'crear_categoria' %}" class="btn btn-primary">Crear Categoría</a>
+                <a href="{% url 'productos:crear_categoria' %}" class="btn btn-primary">Crear Categoría</a>
             </div>
         </div>
     </div>
@@ -48,7 +54,7 @@
                 <div class="card-icon mb-3">✔</div>
                 <h3 class="card-title">Filtrar Productos</h3>
                 <p class="card-text">Encuentre productos específicos por filtro.</p>
-                <a href="{% url 'filtrar_productos' %}" class="btn btn-primary">Filtrar Productos</a>
+                <a href="{% url 'productos:filtrar_productos' %}" class="btn btn-primary">Filtrar Productos</a>
             </div>
         </div>
     </div>
