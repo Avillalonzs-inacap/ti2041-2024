@@ -1,9 +1,11 @@
 from django.urls import path
 from . import views
+from .api import api
 
 app_name = 'productos'
 
 urlpatterns = [
+    path("api/", api.urls),
     path('login/', views.login_view, name='login'),
     path('index/', views.index, name='index'),
     path('registro/', views.registro_producto, name='registro'),
@@ -11,6 +13,5 @@ urlpatterns = [
     path('consulta_productos/', views.consulta_productos, name='consulta_productos'),
     path('crear_categoria/', views.crear_categoria, name='crear_categoria'),
     path('filtrar_productos/', views.filtrar_productos, name='filtrar_productos'),
-
 
 ]
